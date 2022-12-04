@@ -1,5 +1,5 @@
   AWSSplitChecks:
-    module: src/split-checks
+    module: src/split_checks
     handler: handler.main
     vendor: ./src/commons
     role: iamRoleLambdaSplitChecks
