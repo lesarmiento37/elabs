@@ -14,7 +14,7 @@ iamRoleStateMachineSplitChecks:
                 - .amazonaws.com
           Action: 'sts:AssumeRole'
     Policies:
-      - PolicyName: inline_policy_Split_checks
+      - PolicyName: inline_policy_Split_checks_step
         PolicyDocument:
           Version: "2012-10-17"
           Statement:
