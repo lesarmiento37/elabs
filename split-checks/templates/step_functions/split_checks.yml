@@ -1,6 +1,6 @@
 name: "AWSSplitChecks"
 role:
-  Fn::GetAtt: [ "iamRoleStateMachineSplitChecks", "Arn" ]
+  Fn::GetAtt: [ "iamRoleStateMachineSplitChecksRol", "Arn" ]
 definition:
   Comment: "A state pull the file to process"
   StartAt: SplitChecks
