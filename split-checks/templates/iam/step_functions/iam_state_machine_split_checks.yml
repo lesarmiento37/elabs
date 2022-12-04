@@ -14,7 +14,7 @@ iamRoleStateMachineSplitChecksRol:
                 - .amazonaws.com
           Action: 'sts:AssumeRole'
     Policies:
-      - PolicyName: inline_policy_Split_checks_step
+      - PolicyName: inline_policy_split_checks_step
         PolicyDocument:
           Version: "2012-10-17"
           Statement:
@@ -22,5 +22,5 @@ iamRoleStateMachineSplitChecksRol:
               Action:
                 - 'lambda:InvokeFunction'
               Resource:
-                - Fn::GetAtt: [AWSSplitChecksLambdaFunction, "Arn"]
-                - Fn::GetAtt: [AWSSplitChecksErrorLambdaFunction, "Arn"]
+                - Fn::GetAtt: [ AWSSplitChecksLambdaFunction, Arn ]
+                - Fn::GetAtt: [ AWSSplitChecksErrorLambdaFunction, Arn ]
