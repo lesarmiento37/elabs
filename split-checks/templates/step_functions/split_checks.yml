@@ -9,10 +9,10 @@ definition:
       Type: Task
       Resource:
         Fn::GetAtt: [ SplitChecksLambdaFunction, Arn ]
-      End: true
       Catch:
         - ErrorEquals: [ "States.ALL" ]
-          Next: NotifierErrorFallback            
+          Next: NotifierErrorFallback
+      End: true        
     NotifierErrorFallback:
       Type: Task
       Resource:
