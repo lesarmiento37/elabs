@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "deploy": "export AWS_PROFILE=default && sls deploy --region us-east-1"
+    "deploy": "export AWS_PROFILE=$npm_config_awsProfile && sls deploy"
   },
   "author": "Leonardo Sarmiento",
   "license": "ISC",
