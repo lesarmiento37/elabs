@@ -53,7 +53,7 @@ resources:
     iamRoleLambdaSplitChecks: ${file(templates/iam/lambdas/iam_lambda_split_checks.yml):iamRoleLambdaSplitChecks}
     iamRoleLambdaSplitChecksError: ${file(templates/iam/lambdas/iam_lambda_split_checks_error.yml):iamRoleLambdaSplitChecksError}
     #Step Functions Roles Templates
-    iamRoleStateMachineSplitChecks: ${file(templates/iam/step_functions/iam_state_machine_split_checks.yml):iamRoleStateMachineSplitchecks}
+    iamRoleStateMachineSplitChecks: ${file(templates/iam/step_functions/iam_state_machine_split_checks.yml):iamRoleStateMachineSplitChecks}
     #Rule Roles eventbridge
     #iamRuleAWSSplitChecks: ${file(templates/iam/iam_rule_aws_cost_saving.yml):iamRuleAWSSplitChecks}
     #Rules templates
