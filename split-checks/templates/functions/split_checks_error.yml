@@ -4,4 +4,4 @@
     vendor: ./src/commons
     role: iamRoleLambdaSplitChecksError
     environment:
-      REGION: us-east-1
+      REGION: virginia
