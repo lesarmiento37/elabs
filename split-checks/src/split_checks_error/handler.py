@@ -1,4 +1,3 @@
-import constants as c
 import json
 import os
 logger = log.get_logger()
