@@ -2,6 +2,6 @@
     module: src/split_checks
     handler: handler.main
     vendor: ./src/commons
-    role: iamRoleLambdaSplitChecksRol
+    role: iamRoleLambdaSplitChecks
     environment:
       REGION: us-east-1
