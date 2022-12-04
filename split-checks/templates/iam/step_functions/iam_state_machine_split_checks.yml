@@ -1,7 +1,7 @@
 iamRoleStateMachineSplitChecksRol:
   Type: 'AWS::IAM::Role'
   Properties:
-    RoleName: "iamRoleStateMachineSplitChecksRol"
+    RoleName: "iamRoleStateMachineSplitChecks"
     AssumeRolePolicyDocument:
       Version: "2012-10-17"
       Statement:
