@@ -23,6 +23,7 @@ custom:
   prune:
     automatic: true
     includeLayers: true
+    number: ${env:PRUNE_NUMBER}
   serviceTags:
     Managed-by: 'serverless-framework'
     Team: 'DevOps'
@@ -45,7 +46,7 @@ provider:
   stackName: ${self:service}
   memorySize: 512
   timeout: 900
-  logRetentionInDays: 1
+  logRetentionInDays: ${env:LOGS_RETENTION_DAYS}
   stackTags: ${self:custom.serviceTags}  
 
 resources:
