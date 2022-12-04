@@ -1,0 +1,17 @@
+environment = "elabs"
+vpc_cidr  = "10.37.0.0/16"
+public_subnets_cidr = ["10.37.1.0/24","10.37.2.0/24"]
+private_subnets_cidr = ["10.37.3.0/24","10.37.4.0/24","10.37.5.0/24"]
+region = "us-east-1"
+availability_zones = ["us-east-1a","us-east-1b","us-east-1c"]
+instance_ami = "ami-07e885db8c4e2e6bb"
+instance_type = "t3.medium"
+ssh_key_name = "eks-key"
+kube_network_cfg = "10.101.0.0/16"
+ecr_name = "hits_repository"
+ecr_mutability = "MUTABLE"
+eks_node_name = "elabs-cluster-Node-Node01"
+node_disk = "20"
+node_instance_type = ["t3.large"]
+cluster_name = "elabs-cluster-01"
+cluster_version = "1.20"
