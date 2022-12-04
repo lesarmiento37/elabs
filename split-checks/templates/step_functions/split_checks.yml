@@ -1,6 +1,6 @@
-name: "AWSSplitChecks"
+name: AWSSplitChecks
 role:
-  Fn::GetAtt: [ "iamRoleStateMachineSplitChecks", Arn ]
+  Fn::GetAtt: [ "iamRoleStateMachineSplitChecksExecution", "Arn" ]
 definition:
   Comment: "A state pull the file to process"
   StartAt: SplitChecks
