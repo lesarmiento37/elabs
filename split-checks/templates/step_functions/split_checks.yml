@@ -1,0 +1,20 @@
+name: "AWSSplitChecks"
+role:
+  Fn::GetAtt: [ "iamRoleStateMachineSplitChecks", "Arn" ]
+definition:
+  Comment: "A state pull the file to process"
+  StartAt: SplitChecks
+  States:
+    SplitChecks:
+      Type: Task
+      Resource:
+        Fn::GetAtt: [ AWSSplitChecksLambdaFunction, Arn]
+      End: true
+      Catch:
+        - ErrorEquals: [ "States.ALL" ]
+          Next: NotifierErrorFallback            
+    NotifierErrorFallback:
+      Type: Task
+      Resource:
+        Fn::GetAtt: [ AWSSplitChecksErrorLambdaFunction, Arn ]      
+      End: true

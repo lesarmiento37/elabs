@@ -1,0 +1,25 @@
+iamRoleStateMachineSplitChecks:
+  Type: 'AWS::IAM::Role'
+  Properties:
+    RoleName: "iamRoleStateMachineSplitChecks"
+    AssumeRolePolicyDocument:
+      Version: "2012-10-17"
+      Statement:
+        - Effect: Allow
+          Principal:
+            Service: !Join 
+              - ''
+              - - states.
+                - !Ref 'AWS::Region'
+                - .amazonaws.com
+          Action: 'sts:AssumeRole'
+    Policies:
+      - PolicyName: inline_policy_Split_checks
+        PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - 'lambda:InvokeFunction'
+              Resource:
+                - Fn::GetAtt: [AWSSplitChecksLambdaFunction, "Arn"]

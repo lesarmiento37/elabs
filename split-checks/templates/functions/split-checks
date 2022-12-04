@@ -1,0 +1,7 @@
+  AWSSplitChecks:
+    module: src/split-checks
+    handler: handler.main
+    vendor: ./src/commons
+    role: iamRoleLambdaSplitChekcs
+    environment:
+      REGION: ${self:provider.region}

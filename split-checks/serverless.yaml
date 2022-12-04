@@ -52,26 +52,21 @@ provider:
 resources:
   Resources:
     #Lambdas Roles
-    iamRoleLambdaCreateSftpUser: ${file(templates/iam/lambdas/iam_lambda_create_sftp_user.yml):iamRoleLambdaCreateSftpUser}
-    iamRoleLambdaDeleteSftpUser: ${file(templates/iam/lambdas/iam_lambda_delete_sftp_user.yml):iamRoleLambdaDeleteSftpUser}
-    iamRoleLambdaNotifierSftpError: ${file(templates/iam/lambdas/iam_lambda_notifier_sftp_error.yml):iamRoleLambdaNotifierSftpError}
+    iamRoleLambdaSplitChecks: ${file(templates/iam/lambdas/iam_lambda_split_checks.yml):iamRoleLambdaSplitChecks}
     #Step Functions Roles Templates
-    iamRoleStateMachineSftpCrudUser: ${file(templates/iam/step_functions/iam_state_machine_crud_sftp_users.yml):iamRoleStateMachineSftpCrudUser}
+    iamRoleStateMachineSplitChecks: ${file(templates/iam/step_functions/iam_state_machine_split_checks.yml):iamRoleStateMachineSplit_checks}
     #Rule Roles eventbridge
-    #iamRuleAWSCostSavingExecution: ${file(templates/iam/iam_rule_aws_cost_saving.yml):iamRuleAWSCostSavingExecution}
+    #iamRuleAWSSplitChecks: ${file(templates/iam/iam_rule_aws_cost_saving.yml):iamRuleAWSSplitChecks}
     #Rules templates
-    #AWSComputeServiceTurnOffRule: ${file(templates/eventbridge/eventbridge.yml):AWSComputeServiceTurnOffRule}
-    #Policies
-    iamPolicyQaRadian: ${file(templates/iam/policies/iam_policy_qa_radian.yml):iamPolicyQaRadian}
-   
+    #AWSSplitChecks: ${file(templates/eventbridge/eventbridge.yml):AWSSplitChecks
+
 #Lambdas templates
 functions:
   - ${file(templates/functions/aws_create_sftp_user.yml)}
-  - ${file(templates/functions/aws_delete_sftp_user.yml)}
   - ${file(templates/functions/notifier_sftp_error.yml)}
 
 #Step Functions templates
 stepFunctions:
   stateMachines:
-    AWSComputeServiceStop: 
-      ${file(templates/step_functions/aws_sftp_crud_notifier.yml)}
+    AWSSplitChecks: 
+      ${file(templates/step_functions/split_checks.yml)}
