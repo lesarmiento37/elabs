@@ -12,7 +12,7 @@ plugins:
   - serverless-plugin-split-stacks
 custom:
   splitStacks:
-    nestedStackCount: 2 # Controls the number of created nested stacks
+    nestedStackCount: 3 # Controls the number of created nested stacks
     perFunction: false
     perType: false
     perGroupFunction: true
