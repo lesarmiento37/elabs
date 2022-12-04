@@ -34,6 +34,7 @@ custom:
   pythonRequirements:
     dockerizePip: true
     useStaticCache: false
+    usePoetry: false
 package:
   individually: true
 
