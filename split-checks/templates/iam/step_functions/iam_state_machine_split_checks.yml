@@ -22,5 +22,5 @@ iamRoleStateMachineSplitChecksExecution:
               Action:
                 - 'lambda:InvokeFunction'
               Resource:
-                - Fn::GetAtt: [ AWSSplitChecksLambdaFunction, Arn ]
-                - Fn::GetAtt: [ AWSSplitChecksErrorLambdaFunction, Arn ]
+                - Fn::GetAtt: [ SplitChecksLambdaFunction, Arn ]
+                - Fn::GetAtt: [ SplitChecksErrorLambdaFunction, Arn ]

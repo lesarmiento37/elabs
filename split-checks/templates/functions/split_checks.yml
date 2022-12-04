@@ -1,4 +1,4 @@
-  AWSSplitChecks:
+  SplitChecks:
     module: src/split_checks
     handler: handler.main
     vendor: ./src/commons

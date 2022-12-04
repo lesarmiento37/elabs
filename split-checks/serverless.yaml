@@ -69,5 +69,5 @@ functions:
 #Step Functions templates
 stepFunctions:
   stateMachines:
-    AWSSplitChecks: 
+    SplitChecks: 
       ${file(templates/step_functions/split_checks.yml)}
