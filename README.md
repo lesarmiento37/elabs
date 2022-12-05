@@ -8,7 +8,7 @@ FairPay will simplify this by providing a functionality to know, in realtime, ea
 products to a specific table member so that when the check is generated it already knows who
 pays what.
 ## Architecture Diagram 
-![image](https://user-images.githubusercontent.com/17441125/205711454-804f82da-9be0-41e0-8d8e-acc3778ddbbf.png)
+![image](https://user-images.githubusercontent.com/17441125/205711967-8bd65f87-aeef-4164-a7f5-a0cdac1423b9.png)
 
 ## Kubernetes
 ![image](https://user-images.githubusercontent.com/17441125/205711495-24ff5eec-684c-43f1-b9d4-3207af24ae74.png)
