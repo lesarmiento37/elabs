@@ -3,7 +3,7 @@ desplieguesEks:
   Properties:
     Artifacts:
       Type: NO_ARTIFACTS
-    Name: deployment
+    Name: split-checks-deployment
     Description: Automatizacion despliegues
     ServiceRole: >-
       arn:aws:iam::12345678910:role/service-role/codebuild-service-role
@@ -90,7 +90,7 @@ desplieguesEks:
             Pattern: deploy-develop
             ExcludeMatchedPattern: false
           - Type: HEAD_REF
-            Pattern: develop-develop
+            Pattern: develop
             ExcludeMatchedPattern: false
     VpcConfig:
       SecurityGroupIds:
