@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: alliance-ingress
+  name: front-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.class: alb
@@ -15,15 +15,15 @@ metadata:
 
 spec:
   rules:
-    - host: check.elabs.com
+    - host: checks.elabs.com
       http:
         paths:
           - backend:
-              serviceName: front-service
+              serviceName: checks-service
               servicePort: 80
-    - host: api.elabs.com
+    - host: diners.elabs.com
       http:
         paths:
           - backend:
-              serviceName: backend-service
+              serviceName: diners-service
               servicePort: 80

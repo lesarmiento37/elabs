@@ -2,31 +2,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: product-deployment
+  name: checks-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: front-product-core
+      app: front-checks-core
   template:
     metadata:
       labels:
-        app: front-product-core
+        app: front-checks-core
     spec:
       containers:
-        - name: front-product-container
-          image: elabs/front-product-container:latest
+        - name: front-checks-container
+          image: elabs/front-checks-container:latest
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: front-product-service
+  name: front-checks-service
   labels:
-    app: front-product-service
+    app: front-checks-service
 spec:
   ports:
     - port: 8080
       protocol: TCP
   selector:
-    app: front-product-service
+    app: front-checks-service
