@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front-product-core
+  template:
+    metadata:
+      labels:
+        app: front-product-core
+    spec:
+      containers:
+        - name: front-product-container
+          image: elabs/front-product-container:latest
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-product-service
+  labels:
+    app: front-product-service
+spec:
+  ports:
+    - port: 8080
+      protocol: TCP
+  selector:
+    app: front-product-service

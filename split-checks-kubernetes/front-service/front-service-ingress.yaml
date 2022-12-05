@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: alliance-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/security-groups: sg-1234
+    alb.ingress.kubernetes.io/subnets: subnet-sff125, subnet-dffgd45454
+    alb.ingress.kubernetes.io/success-codes: 200,401
+    alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=600
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
+
+
+spec:
+  rules:
+    - host: check.elabs.com
+      http:
+        paths:
+          - backend:
+              serviceName: front-service
+              servicePort: 80
+    - host: api.elabs.com
+      http:
+        paths:
+          - backend:
+              serviceName: backend-service
+              servicePort: 80

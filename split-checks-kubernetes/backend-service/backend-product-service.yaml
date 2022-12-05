@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-product-core
+  template:
+    metadata:
+      labels:
+        app: backend-product-core
+    spec:
+      containers:
+        - name: backend-product-container
+          image: elabs/backend-product-container:latest
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-product-service
+  labels:
+    app: backend-product-service
+spec:
+  ports:
+    - port: 8080
+      protocol: TCP
+  selector:
+    app: backend-product-service

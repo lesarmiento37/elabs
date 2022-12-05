@@ -57,9 +57,9 @@ resources:
     #Step Functions Roles Templates
     iamRoleStateMachineSplitChecksExecution: ${file(templates/iam/step_functions/iam_state_machine_split_checks.yml):iamRoleStateMachineSplitChecksExecution}
     #Rule Roles eventbridge
-    #iamRuleAWSSplitChecks: ${file(templates/iam/iam_rule_aws_cost_saving.yml):iamRuleAWSSplitChecks}
+    iamRuleAWSSplitChecks: ${file(templates/iam/iam_rule_aws_cost_saving.yml):iamRuleAWSSplitChecks}
     #Rules templates
-    #AWSSplitChecks: ${file(templates/eventbridge/eventbridge.yml):AWSSplitChecks
+    AWSSplitChecksRule: ${file(templates/eventbridge/rules_checks.yml):AWSSplitChecksRule
 
 #Lambdas templates
 functions:
